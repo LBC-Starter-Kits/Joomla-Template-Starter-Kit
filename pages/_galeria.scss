@@ -1,0 +1,30 @@
+.galeria{
+    .hero{
+        height: 0px;
+        min-height: unset;
+    }
+    .clearfix-hero{
+        display: block;
+        height: 250px;
+    }
+
+    .contenido__sidebar--izq, .contenido__sidebar--der {
+        width: 10%;
+    }
+
+    .contenido__central{
+        max-width: unset;
+
+        .event-thumbnail{
+            
+            img{
+                margin-right: .25rem !important;
+                margin-left: .25rem !important;
+            }
+        }
+
+        #events .item-container{
+            margin-bottom: 2rem;
+        }
+    }
+}
