@@ -10,7 +10,7 @@ Una plantilla de base con la estructura de una template Joomla.
 ~~~
 git init foo
 cd foo
-git pull https://github.com/Luinux81/joomla-template-base.git
+git pull https://github.com/LBC-Starter-Kits/Joomla-Template-Starter-Kit.git
 ~~~
 
 * Instalamos las dependencias del archivo package.json
