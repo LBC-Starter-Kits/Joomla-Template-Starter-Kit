@@ -4,7 +4,8 @@
   "description": "Una plantilla de base con la estructura de una template Joomla.",
   "main": "index.js",
   "scripts": {
-    "build": "webpack --config webpack.config.js"
+    "build": "webpack --config webpack.config.js",
+    "update-styles": "git subtree pull --prefix src/styles https://github.com/LBC-Starter-Kits/sass-7-1-pattern.git main --squash"
   },
   "repository": {
     "type": "git",

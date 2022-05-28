@@ -13,6 +13,11 @@ cd foo
 git pull https://github.com/LBC-Starter-Kits/Joomla-Template-Starter-Kit.git
 ~~~
 
+* Enlazamos con el repositorio sass con el patrón 7-1
+~~~
+git subtree add --prefix src/styles https://github.com/LBC-Starter-Kits/sass-7-1-pattern.git main --squash
+~~~
+
 * Instalamos las dependencias del archivo package.json
 ~~~
 npm install
