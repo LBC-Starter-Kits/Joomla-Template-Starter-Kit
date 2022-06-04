@@ -48,6 +48,7 @@ module.exports = {
             patterns: [
                 { from: path.resolve(__dirname,"src","images"), to: "images" },
                 { from: path.resolve(__dirname,"src","html"), to: "html" },
+                { from: path.resolve(__dirname,"vendor"), to: "vendor" },
                 { from: "./src/favicon.ico", to: "favicon.ico" },
                 { from: "./src/index.php", to: "index.php" },
                 { from: "./src/template_preview.png", to: "template_preview.png" },
