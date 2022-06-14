@@ -91,10 +91,13 @@ header{
 }
 
 .nav__menudiv{
-    visibility: hidden;
+    // visibility: hidden;
+    opacity: 0;
     position: absolute;
     top:0;
-    left: 0;
+    left: -100vw;
+    transition: left .25s ease-out, opacity .1s linear;
+
     width: 100vw;
     height: 100vh;
     color:white;
@@ -104,6 +107,12 @@ header{
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+
+    &.menu-abierto{
+        // visibility: visible;
+        opacity: 1;
+        left: 0;
+    }
 
     .navbar-toggler{
         display: none;

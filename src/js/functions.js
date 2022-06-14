@@ -4,7 +4,8 @@ const menuDiv = document.querySelector('[data-rol="menu_div"]');
 
 
 function abreMenu(){
-    menuDiv.style.visibility = "visible";
+    menuDiv.classList.add("menu-abierto");
+
     document.body.style.overflowY = "hidden";
     document.documentElement.style.overflowY = "hidden";
 
@@ -13,7 +14,8 @@ function abreMenu(){
 }
 
 function cierraMenu(){
-    menuDiv.style.visibility = "hidden";
+    menuDiv.classList.remove("menu-abierto");
+
     document.body.style.overflowY = "auto";
     document.documentElement.style.overflowY = "auto";
 
