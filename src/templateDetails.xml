@@ -23,8 +23,10 @@
     </files>
 
     <positions>
-		<position>position-menu</position>
-		<position>position-menumovil</position>
+		<position>nav-desktop</position>
+		<position>nav-movil</position>
+		<position>nav-movil-content</position>
+		<position>nav-movil-footer</position>
 		<position>position-top</position>
 		<position>position-bottom</position>	
 			
@@ -33,7 +35,7 @@
 		<position>nav</position>
 		<position>idiomas</position>
 		<position>top</position>
-		<position>position-menumovil-0</position>
+		
 		<position>position-1</position>
 		<position>position-2</position>
 		<position>position-3</position>

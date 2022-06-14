@@ -62,26 +62,46 @@
     <div class="<?php echo $contenedor; ?>">
         
     <header>
-            <nav class="mainNav">
-                <span class="nav__logo">LOGO</span>
-                <div class="nav__menu nav__menu--desktop">
-                    <jdoc:include type="modules" name="position-menu" />
-                </div>
-                <div class="nav__menu nav__menu--movil">
-                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
+        <nav class="mainNav">
+            <span class="nav__logo">LOGO</span>
+            <div class="nav__menu nav__menu--desktop">
+                <jdoc:include type="modules" name="nav-desktop" />
+            </div>
+            <div class="nav__menu nav__menu--movil">
+                <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
 
-                    <jdoc:include type="modules" name="position-menumovil" />
-                    
-                    <div class="nav__menudiv" data-rol="menu_div">
-                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
-                        <span class="nav__logo">LOGO</span>
-                        <div class="nav__menu-content">
-                            <jdoc:include type="modules" name="position-menumovil-0" />
+                <jdoc:include type="modules" name="nav-movil" />
+                
+                <div class="nav__menudiv" data-rol="menu_div">
+                    <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
+                    <span class="nav__logo">LOGO</span>
+                    <div class="nav__menu-content">
+                        <jdoc:include type="modules" name="nav-movil-content" />
+                    </div>
+                    <div class="nav__menu-footer">
+                        <div class="social-wrapper">
+                            <a href="#" target="_blank">
+                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/facebook-1-blanco.png" alt="facebook">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/twitter-1-blanco.png" alt="twitter">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/instagram-1-blanco.png" alt="instagram">
+                            </a>
+                            <a href="#" target="_blank">
+                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/youtube-1-blanco.png" alt="youtube">
+                            </a>        
+                        </div>
+
+                        <div class="idioma-wrapper-menu">
+                            <jdoc:include type="modules" name="nav-movil-footer" style="none" />
                         </div>
                     </div>
-                </div>                   
-            </nav>        
-        </header>
+                </div>
+            </div>                   
+        </nav>        
+    </header>
 
         <main>
             <jdoc:include type="modules" name="position-top" />
