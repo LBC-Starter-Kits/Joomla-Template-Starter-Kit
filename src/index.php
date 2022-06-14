@@ -68,13 +68,16 @@
                     <jdoc:include type="modules" name="position-menu" />
                 </div>
                 <div class="nav__menu nav__menu--movil">
-                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();"></i>
+                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
 
                     <jdoc:include type="modules" name="position-menumovil" />
                     
-                    <div id="nav__menudiv" class="nav__menudiv">
-                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();"></i>
-                        <jdoc:include type="modules" name="position-menumovil-0" />
+                    <div class="nav__menudiv" data-rol="menu_div">
+                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
+                        <span class="nav__logo">LOGO</span>
+                        <div class="nav__menu-content">
+                            <jdoc:include type="modules" name="position-menumovil-0" />
+                        </div>
                     </div>
                 </div>                   
             </nav>        

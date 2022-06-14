@@ -1,8 +1,10 @@
-var btnAbrir = document.getElementsByClassName("nav__icono--abrir")[0];
-var btnCerrar = document.getElementsByClassName("nav__icono--cerrar")[0];
+const btnAbrir = document.querySelector('[data-rol="boton-abrir"]');
+const btnCerrar = document.querySelector('[data-rol="boton-cerrar"]');
+const menuDiv = document.querySelector('[data-rol="menu_div"]');
+
 
 function abreMenu(){
-    document.getElementById("nav__menudiv").style.visibility = "visible";
+    menuDiv.style.visibility = "visible";
     document.body.style.overflowY = "hidden";
     document.documentElement.style.overflowY = "hidden";
 
@@ -11,7 +13,7 @@ function abreMenu(){
 }
 
 function cierraMenu(){
-    document.getElementById("nav__menudiv").style.visibility = "hidden";
+    menuDiv.style.visibility = "hidden";
     document.body.style.overflowY = "auto";
     document.documentElement.style.overflowY = "auto";
 
