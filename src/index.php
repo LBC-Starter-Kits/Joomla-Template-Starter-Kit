@@ -4,9 +4,29 @@
     $templatePath = $this->baseurl . '/templates/' . $this->template; 
     $contenedor = $this->params['fluidContainer'] == 1 ? "container-fluid" : "container" ;
 
-    $app = JFactory::getApplication();
+    $version = explode(".", JVERSION)[0];
+
+    switch ($version){
+        case "4":
+            $app = \Joomla\CMS\Factory::getContainer()->get(\Joomla\CMS\Application\SiteApplication::class);
+
+            break;
+        default:
+            $app = JFactory::getApplication();
+    }
+
     $menu = $app->getMenu();
     $activo = $menu->getActive();
+    $bodyClases = strtolower($activo->alias);
+
+    $input = $app->input;
+    if($input->getCmd('option') == 'com_content' && $input->getCmd('view') == 'category'){
+        $bodyClases .= " category-page ";
+    }
+
+    if($input->getCmd('option') == 'com_content' && $input->getCmd('view') == 'article'){
+        $bodyClases .= " article-page ";
+    }
 ?>
 
 
@@ -58,7 +78,7 @@
     </style>
 </head>
 
-<body class="<?php echo strtolower($activo->alias); ?> color-fondo">
+<body class="<?php echo $bodyClases; ?> color-fondo">
     <div class="<?php echo $contenedor; ?>">
         
     <header>
