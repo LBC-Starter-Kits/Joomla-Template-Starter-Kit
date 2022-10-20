@@ -1,5 +1,13 @@
 {
+    "name": "lbc/joomla-template-base",
+    "minimum-stability": "dev",
+    "authors": [
+        {
+            "name": "Luis BC",
+            "email": "luinux81@gmail.com"
+        }
+    ],
     "require": {
-        "dickinsonjl/lorum": "^1.0"
+        "dickinsonjl/lorum": "dev-master"
     }
 }

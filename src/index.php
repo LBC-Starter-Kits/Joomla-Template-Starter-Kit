@@ -1,6 +1,10 @@
 <?php 
     defined( '_JEXEC' ) or die( 'Restricted access' );
 
+    // Descomentar para habilitar soporte composer 
+    //require_once __DIR__ . DIRECTORY_SEPARATOR ."vendor" . DIRECTORY_SEPARATOR . "autoload.php";
+
+    
     $templatePath = $this->baseurl . '/templates/' . $this->template; 
     $contenedor = $this->params['fluidContainer'] == 1 ? "container-fluid" : "container" ;
 
