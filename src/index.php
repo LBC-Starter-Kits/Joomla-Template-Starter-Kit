@@ -1,34 +1,26 @@
 <?php 
     defined( '_JEXEC' ) or die( 'Restricted access' );
 
-    // Descomentar para habilitar soporte composer 
-    //require_once __DIR__ . DIRECTORY_SEPARATOR ."vendor" . DIRECTORY_SEPARATOR . "autoload.php";
+    require_once __DIR__ . DIRECTORY_SEPARATOR ."vendor" . DIRECTORY_SEPARATOR . "autoload.php";
+    require_once __DIR__ . DIRECTORY_SEPARATOR . "helper.php";
 
     
     $templatePath = $this->baseurl . '/templates/' . $this->template; 
     $contenedor = $this->params['fluidContainer'] == 1 ? "container-fluid" : "container" ;
 
-    $version = explode(".", JVERSION)[0];
 
-    switch ($version){
-        case "4":
-            $app = \Joomla\CMS\Factory::getContainer()->get(\Joomla\CMS\Application\SiteApplication::class);
-
-            break;
-        default:
-            $app = JFactory::getApplication();
-    }
+    $app = JoomlaHelper::getJoomlaApp();
 
     $menu = $app->getMenu();
     $activo = $menu->getActive();
     $bodyClases = strtolower($activo->alias);
 
-    $input = $app->input;
-    if($input->getCmd('option') == 'com_content' && $input->getCmd('view') == 'category'){
+    
+    if(JoomlaHelper::isCurrentViewCategory($app)){
         $bodyClases .= " category-page ";
     }
 
-    if($input->getCmd('option') == 'com_content' && $input->getCmd('view') == 'article'){
+    if(JoomlaHelper::isCurrentViewArticle($app)){
         $bodyClases .= " article-page ";
     }
 ?>
