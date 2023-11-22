@@ -60,7 +60,7 @@ module.exports = {
         }),
         new ZipPlugin({
             path : '../dist_zip',
-            filename : 'j3_template_base.zip'
+            filename : 'joomla_template_base.zip'
         }),
     ],
 };
