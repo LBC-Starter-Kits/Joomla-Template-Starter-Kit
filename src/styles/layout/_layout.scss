@@ -1,3 +1,15 @@
+.container{
+    &--classic{
+        max-width: $max-width;
+        margin: 0 auto;
+    }
+
+    &--fluid{
+        display: grid;
+        grid-template-columns: [full-width-start] 100px [breakout-start] 100px [content-start] 1fr [content-end] 100px [breakout-end] 100px [full-width-end];
+    }
+}
+
 $bg: black;
 
 body {
