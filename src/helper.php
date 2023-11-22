@@ -15,11 +15,15 @@ class JoomlaHelper{
 
     public static function getJoomlaPath(){
         switch(self::getJoomlaVersion()){
-            case "4":
-                $uri = \Joomla\CMS\Uri\Uri::base();
-                break;
-            default:
+            case "2":            
+            case "3":
                 $uri = JUri::base();
+                break;
+            case "4":
+            case "5":
+            default:
+                $uri = \Joomla\CMS\Uri\Uri::base();
+                break;            
         }
 
         return $uri;
@@ -33,12 +37,14 @@ class JoomlaHelper{
      */
     public static function getJoomlaApp(){
         switch (self::getJoomlaVersion()){
-            case "4":
-                $app = \Joomla\CMS\Factory::getContainer()->get(\Joomla\CMS\Application\SiteApplication::class);
-    
-                break;
-            default:
+            case "2":            
+            case "3":
                 $app = JFactory::getApplication();
+                break;
+            case "4":
+            case "5":
+            default:
+                $app = \Joomla\CMS\Factory::getContainer()->get(\Joomla\CMS\Application\SiteApplication::class);               
         }
 
         return $app;
@@ -52,11 +58,14 @@ class JoomlaHelper{
      */
     public static function getDBConnection(){
         switch (self::getJoomlaVersion()){
-            case "4":
-                $db = \Joomla\CMS\Factory::getContainer()->get('DatabaseDriver');
-                break;
-            default:
+            case "2":            
+            case "3":
                 $db = JFactory::getDbo();
+                break;
+            case "4":
+            case "5":
+            default:
+                $db = \Joomla\CMS\Factory::getContainer()->get('DatabaseDriver');
         }
 
         return $db;

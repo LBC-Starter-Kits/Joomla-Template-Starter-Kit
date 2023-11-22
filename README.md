@@ -1,4 +1,4 @@
-# Estructura base de una template para Joomla 3.x
+# Estructura base de una template para Joomla 3.x, 4.x, 5.x
 
 Una plantilla de base con la estructura de una template Joomla.
 
@@ -18,9 +18,10 @@ git pull https://github.com/LBC-Starter-Kits/Joomla-Template-Starter-Kit.git
 git subtree add --prefix src/styles https://github.com/LBC-Starter-Kits/sass-7-1-pattern.git main --squash
 ~~~
 
-* Instalamos las dependencias del archivo package.json
+* Instalamos las dependencias del archivo package.json y composer.json
 ~~~
 npm install
+composer install
 ~~~
 
 * Por último ejecutamos el script build

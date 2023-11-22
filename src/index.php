@@ -6,7 +6,7 @@
 
     
     $templatePath = $this->baseurl . '/templates/' . $this->template; 
-    $contenedor = $this->params['fluidContainer'] == 1 ? "container-fluid" : "container" ;
+    $contenedor = $this->params['fluidContainer'] == 1 ? "container--fluid" : "container--static" ;
 
 
     $app = JoomlaHelper::getJoomlaApp();
@@ -111,7 +111,7 @@
                         </div>
 
                         <div class="idioma-wrapper-menu">
-                            <jdoc:include type="modules" name="nav-movil-footer" style="none" />
+                            <jdoc:include type="modules" name="nav-movil-footer" <?= "style=\"none\"" ?> />
                         </div>
                     </div>
                 </div>
