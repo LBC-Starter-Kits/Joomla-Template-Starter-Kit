@@ -1,11 +1,11 @@
 .container{
     &--classic{
-        max-width: $max-width;
+        max-width: min(95%, $max-width);
         margin: 0 auto;
     }
 
     &--static{
-        max-width: $max-width;
+        max-width: min(95%, $max-width);
         margin: 0 auto;
     }
 
