@@ -2,13 +2,15 @@
 // This file contains all application-wide Sass variables.
 // -----------------------------------------------------------------------------
 
+// @import url('http://fonts.googleapis.com/css?family=Roboto+Slab|Open+Sans:400italic,700italic,400,700');
+@import url('http://fonts.googleapis.com/css?family=Montserrat:400italic,700italic,400,700');
 
-
+$googleFonts: 'Montserrat';
 
 
 /// Regular font family
 /// @type List
-$text-font-stack: 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
+$text-font-stack: $googleFonts, 'Open Sans', 'Helvetica Neue Light', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif !default;
 
 /// Code (monospace) font family
 /// @type List
@@ -59,10 +61,39 @@ $breakpoints: (
   'large': 1024px,
 ) !default;
 
+/// Media Queries breakpoints
+$mq_breakpoints: (
+    "phone":        400px,
+    "phone-wide":   480px,
+    "phablet":      560px,
+    "tablet-small": 640px,
+    "tablet":       768px,
+    "900":          900px,
+    "tablet-wide":  1024px,
+    "desktop":      1248px,
+    "desktop-wide": 1440px
+);
 
+/**
+* Tipografía con escala Perfect Fourth (16px 1.333)
+*/
+$perfect-fourth : (
+  "xss":  0.6rem,
+  "xs":   0.8rem,
+  "s":    1rem,
+  "m":    1.333rem,
+  "l":    1.777rem,
+  "xl":   2.369rem,
+  "xxl":  3.157rem,
+  "xxxl": 4.209rem,
+);
 
-
-
+/**
+* Escalas tipográficas
+*/
+$typo-scales : (
+  "perfect-fourth": $perfect-fourth,
+);
 
 /// Relative or absolute URL where all assets are served from
 /// @type String

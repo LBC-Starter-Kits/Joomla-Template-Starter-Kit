@@ -35,21 +35,11 @@
 }
 
 
-/// Media Queries
-$breakpoints: (
-    "phone":        400px,
-    "phone-wide":   480px,
-    "phablet":      560px,
-    "tablet-small": 640px,
-    "tablet":       768px,
-    "tablet-wide":  1024px,
-    "desktop":      1248px,
-    "desktop-wide": 1440px
-);
+// Media queries
 
 @mixin mq($width, $type: min) {
-  @if map_has_key($breakpoints, $width) {
-      $width: map_get($breakpoints, $width);
+  @if map_has_key($mq_breakpoints, $width) {
+      $width: map_get($mq_breakpoints, $width);
       @if $type == max {
           $width: $width - 1px;
       }
@@ -58,6 +48,23 @@ $breakpoints: (
       }
   }
 }
+
+// Tipografía
+
+@mixin typo($size, $scale: 'perfect-fourth'){
+  @if map-has-key($map: $typo-scales, $key: $scale ){
+    $scale: map-get($map: $typo-scales, $key: $scale)
+  }
+  @else{
+    $scale: $perfect-fourth;
+  }
+
+
+  @if map-has-key($map: $scale, $key: $size) {
+    font-size: map-get($scale, $size);
+  }
+}
+
 
 /*
 Uso: 
@@ -84,6 +91,9 @@ Uso:
 @include color-scheme(black, (white, black, yellow));
 
 */
+
+// Colores 
+
 @mixin color-scheme($texto, $bg){
   @if list.length($bg) == 1{
     background-color: $bg;
@@ -92,4 +102,26 @@ Uso:
     background-image: linear-gradient(to top left, $bg);
   }
   color: $texto;
+}
+
+@mixin color-variables($color, $label) {
+  
+  @for $i from 4 to 1 {
+    $shadow: adjust-color($color, $lightness: -$i * 10%);
+    --color-#{$label}-#{500 - ($i * 100)}: #{$shadow};
+  }
+  
+  --color-#{$label}-500: #{$color};
+
+  @for $i from 4 to 1 {
+    $tint: adjust-color($color, $lightness: $i * 10%);
+    --color-#{$label}-#{500 + ($i * 100)}: #{$tint};
+  }
+}
+
+
+@mixin full-bleed($color){
+  background-color: $color;
+  box-shadow: 0 0 0 100vmax $color;
+  clip-path: inset(0 -100vmax);
 }

@@ -29,9 +29,10 @@ html {
 a {
   color: $brand-color;
   text-decoration: none;
+  font-family: inherit;
 
   @include on-event {
-    color: red;
+    // color: red;
     text-decoration: none;
   }
 }
