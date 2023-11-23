@@ -28,3 +28,31 @@
 @function font($path, $base: $base-url) {
   @return asset($base, 'fonts/', $path);
 }
+
+
+// Sass functions to force the CSS functions.
+
+@function css-function( $function, $values... ) {
+  @return 
+      $function
+      + unquote( '(' )
+      + $values
+      + unquote( ')' )
+  ;
+}
+
+@function css-min( $values... ) {
+  @return css-function( min, $values );
+}
+
+@function css-max( $values... ) {
+  @return css-function( max, $values );
+}
+
+@function css-minmax( $values... ) {
+  @return css-function( minmax, $values );
+}
+
+@function css-clamp( $values... ) {
+  @return css-function( clamp, $values );
+}

@@ -7,7 +7,7 @@
     
     $templatePath = $this->baseurl . '/templates/' . $this->template; 
     $contenedor = $this->params['fluidContainer'] == 1 ? "container--fluid" : "container--static" ;
-
+    $contenedor = "container--fluid" ;
 
     $app = JoomlaHelper::getJoomlaApp();
 
@@ -75,68 +75,67 @@
 </head>
 
 <body class="<?php echo $bodyClases; ?> color-fondo">
-    <div class="<?php echo $contenedor; ?>">
-        
-    <header>
-        <nav class="mainNav">
-            <span class="nav__logo">LOGO</span>
-            <div class="nav__menu nav__menu--desktop">
-                <jdoc:include type="modules" name="nav-desktop" />
-            </div>
-            <div class="nav__menu nav__menu--movil">
-                <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
-
-                <jdoc:include type="modules" name="nav-movil" />
-                
-                <div class="nav__menudiv" data-rol="menu_div">
-                    <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
-                    <span class="nav__logo">LOGO</span>
-                    <div class="nav__menu-content">
-                        <jdoc:include type="modules" name="nav-movil-content" />
-                    </div>
-                    <div class="nav__menu-footer">
-                        <div class="social-wrapper">
-                            <a href="#" target="_blank">
-                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/facebook-1-blanco.png" alt="facebook">
-                            </a>
-                            <a href="#" target="_blank">
-                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/twitter-1-blanco.png" alt="twitter">
-                            </a>
-                            <a href="#" target="_blank">
-                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/instagram-1-blanco.png" alt="instagram">
-                            </a>
-                            <a href="#" target="_blank">
-                                <img class="social-logo" src="<?php echo $templatePath;?>/images/social/youtube-1-blanco.png" alt="youtube">
-                            </a>        
+    <header style="background-color:coral">        
+        <div class="<?= $contenedor ?>">
+            <div class="mainNav">
+                <span class="nav__logo">LOGO</span>
+                <div class="nav__menu nav__menu--desktop">
+                    <jdoc:include type="modules" name="nav-desktop" />
+                </div>
+                <div class="nav__menu nav__menu--movil">
+                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
+                    <jdoc:include type="modules" name="nav-movil" />
+            
+                    <div class="nav__menudiv" data-rol="menu_div">
+                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
+                        <span class="nav__logo">LOGO</span>
+                        <div class="nav__menu-content">
+                            <jdoc:include type="modules" name="nav-movil-content" />
                         </div>
-
-                        <div class="idioma-wrapper-menu">
-                            <jdoc:include type="modules" name="nav-movil-footer" <?= "style=\"none\"" ?> />
+                        <div class="nav__menu-footer">
+                            <div class="social-wrapper">
+                                <a href="#" target="_blank">
+                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/facebook-1-blanco.png" alt="facebook">
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/twitter-1-blanco.png" alt="twitter">
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/instagram-1-blanco.png" alt="instagram">
+                                </a>
+                                <a href="#" target="_blank">
+                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/youtube-1-blanco.png" alt="youtube">
+                                </a>
+                            </div>
+                            <div class="idioma-wrapper-menu">
+                                <jdoc:include type="modules" name="nav-movil-footer" <?= "style=\"none\"" ?> />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>                   
-        </nav>        
+            </div>
+        </div>
     </header>
 
-        <main>
+    <main>
+        <div class="<?= $contenedor ?> position-top">
             <jdoc:include type="modules" name="position-top" />
+        </div>
 
-            <div class="contenido">                    
-                <section>
-                    <jdoc:include type="component" />
-                    <?php /*var_dump($this->params); */ ?>
-                </section>     
-            </div>        
+        <div class="<?= $contenedor ?> joomla-component">
+            <jdoc:include type="component" />
+        </div>            
 
+        <div class="<?= $contenedor ?> position-bottom">
             <jdoc:include type="modules" name="position-bottom" />
-        </main>
+        </div>
+    </main>
 
-        <footer>
+    <footer>
+        <div class="<?= $contenedor ?> footer">
             <jdoc:include type="modules" name="footer" />
-        </footer>
-    </div>
-
+        </div>
+    </footer>
 
 <?php
     if($this->params['bootstrap']){
