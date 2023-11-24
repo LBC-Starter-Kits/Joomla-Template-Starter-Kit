@@ -70,20 +70,45 @@
     grid-template-columns: repeat(auto-fit, css-minmax( css-min(var(--min-column-size), 100%) , 1fr));    
 }
 
-// // Reel
+// Reel
 
-// .reel{
-//     --num-slides-visibles: 1;
+.reel{
+    --num-slides-visibles: 2;
+    --gap: 1rem;
 
-//     display: grid;
-//     gap: 1rem;
-//     grid-auto-flow: column;
-//     grid-auto-columns: css-calc(100% / var(--num-slides-visibles));
-//     overflow-x: scroll;
-//     scroll-snap-type: x mandatory;
+    display: grid;
+    gap: var(--gap);
+    grid-auto-flow: column;
+    grid-auto-columns: calc((100% / var(--num-slides-visibles)) - (var(--gap) / 2));
+    overflow-x: scroll;
+    scroll-snap-type: x mandatory;
+    scroll-padding: var(--gap);
 
-//     & > * {
-//         scroll-snap-align: start;
-//     }
-// }
+    & > * {
+        scroll-snap-align: start;
+    }
+}
+
+// Main with sidebar
+
+.main-with-sidebar{
+    --gap: 1rem;
+    --sidebar-size: 300px;
+    --main-min-size: 500px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    gap: var(--gap);
+
+    & > :first-child{
+        flex-basis: var(--main-min-size);
+        flex-grow: 9999;        
+    }
+
+    & > :last-child{
+        flex-basis: var(--sidebar-size);
+        flex-grow: 1;
+    }
+}
 
