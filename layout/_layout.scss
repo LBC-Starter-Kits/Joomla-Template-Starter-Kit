@@ -39,3 +39,51 @@
         }        
     }
 }
+
+// Cluster
+
+.cluster{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+// Flexible Grid
+
+.flexible-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    & > * {
+        flex: 1;
+    }
+}
+
+// Auto Grid
+
+.auto-grid{
+    --min-column-size: 20rem;
+
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, css-minmax( css-min(var(--min-column-size), 100%) , 1fr));    
+}
+
+// // Reel
+
+// .reel{
+//     --num-slides-visibles: 1;
+
+//     display: grid;
+//     gap: 1rem;
+//     grid-auto-flow: column;
+//     grid-auto-columns: css-calc(100% / var(--num-slides-visibles));
+//     overflow-x: scroll;
+//     scroll-snap-type: x mandatory;
+
+//     & > * {
+//         scroll-snap-align: start;
+//     }
+// }
+
