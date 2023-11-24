@@ -1,3 +1,7 @@
+// -----------------------------------------------------------------------------
+// This file contains reusable styles related to the grid system of the site/application.
+// -----------------------------------------------------------------------------
+
 .container{
     &--classic{
         max-width: min(95%, $max-width);
@@ -111,41 +115,4 @@
         flex-grow: 1;
     }
 }
-
-$bg: black;
-
-body {
-    background-color: $bg;
-    height: 100vh;
-}
-
-.contenedor{
-    position: relative;
-    height: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    position: relative;
-}
-
-// main{
-//     display: flex;
-//     flex-direction: column;
-//     width: 75%;
-
-//     .hero{
-//         min-height: 20%;
-//         margin-bottom: 0.2rem;
-//     }
-// }
-
-// .contenido{
-//     display: flex;
-
-//     img{
-//         max-width: 100%;
-//     }
-// }
 
