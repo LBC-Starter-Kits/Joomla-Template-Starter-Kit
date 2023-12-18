@@ -136,3 +136,18 @@ Uso:
   -webkit-backdrop-filter: blur($blur);
   border: 1px solid rgba($color, $outline-alpha);
 }
+
+
+@mixin color-shadow($angle: -45deg, $color1:#0000ff, $color2: #ff0000) {
+  position: relative;
+
+  &:before{
+    position: absolute;
+    z-index: -1;
+    content:"";
+    inset: 0;
+    background: linear-gradient($angle, $color1 0%, $color2 100%);
+    filter: blur(20px);
+    transform: translate3d(0px, 20px, 0px);
+  }
+}
