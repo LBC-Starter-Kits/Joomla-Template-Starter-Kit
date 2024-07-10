@@ -4,65 +4,53 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "4624f88db593824efd3deeb421e93847",
+    "content-hash": "6b8758cbd7c7c24b05ebdf5952297670",
     "packages": [
         {
-            "name": "dickinsonjl/lorum",
-            "version": "dev-master",
+            "name": "lbcdev/joomla-helper",
+            "version": "dev-main",
             "source": {
                 "type": "git",
-                "url": "https://github.com/dickinsonjl/lorum.git",
-                "reference": "6ceaec764dd40fe849bb280676e671ffef64251e"
+                "url": "https://github.com/Luinux81/joomla-helper.git",
+                "reference": "9eaa1ec42bdafec2ba48b77ce5bec51a86073f80"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/dickinsonjl/lorum/zipball/6ceaec764dd40fe849bb280676e671ffef64251e",
-                "reference": "6ceaec764dd40fe849bb280676e671ffef64251e",
+                "url": "https://api.github.com/repos/Luinux81/joomla-helper/zipball/9eaa1ec42bdafec2ba48b77ce5bec51a86073f80",
+                "reference": "9eaa1ec42bdafec2ba48b77ce5bec51a86073f80",
                 "shasum": ""
-            },
-            "require": {
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "4.0.*"
             },
             "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
-                    "Dickinsonjl\\Lorum\\": "src"
+                    "LBCdev\\": "src/"
                 }
             },
             "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
             "authors": [
                 {
-                    "name": "John Dickinson",
-                    "email": "john.dickinson@enta.net"
+                    "name": "Luis BC",
+                    "email": "luinux81@gmail.com"
                 }
             ],
-            "description": "Lorem ipsum dolor sit amet",
-            "keywords": [
-                "lorem ipsum dolor sit amet"
-            ],
+            "description": "Utility functions for Joomla templates, modules and plugins development",
             "support": {
-                "issues": "https://github.com/dickinsonjl/lorum/issues",
-                "source": "https://github.com/dickinsonjl/lorum/tree/master"
+                "issues": "https://github.com/Luinux81/joomla-helper/issues",
+                "source": "https://github.com/Luinux81/joomla-helper/tree/main"
             },
-            "time": "2017-11-02T15:37:09+00:00"
+            "time": "2024-07-10T00:21:53+00:00"
         }
     ],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "dickinsonjl/lorum": 20
+        "lbcdev/joomla-helper": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": [],
     "platform-dev": [],
-    "plugin-api-version": "2.1.0"
+    "plugin-api-version": "2.6.0"
 }

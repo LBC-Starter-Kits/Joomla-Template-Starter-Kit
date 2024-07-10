@@ -8,6 +8,6 @@
         }
     ],
     "require": {
-        "dickinsonjl/lorum": "dev-master"
+        "lbcdev/joomla-helper": "dev-main"
     }
 }

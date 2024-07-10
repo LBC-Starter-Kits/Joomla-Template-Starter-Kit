@@ -1,9 +1,9 @@
 <?php 
+    use LBCdev\JoomlaHelper as JoomlaHelper;
+
     defined( '_JEXEC' ) or die( 'Restricted access' );
 
     require_once __DIR__ . DIRECTORY_SEPARATOR ."vendor" . DIRECTORY_SEPARATOR . "autoload.php";
-    require_once __DIR__ . DIRECTORY_SEPARATOR . "helper.php";
-
     
     $templatePath = $this->baseurl . '/templates/' . $this->template; 
     $contenedor = $this->params['fluidContainer'] == 1 ? "container--fluid" : "container--static" ;
@@ -11,10 +11,10 @@
 
     $app = JoomlaHelper::getJoomlaApp();
 
+    $lang = $app->getLanguage();
     $menu = $app->getMenu();
     $activo = $menu->getActive();
     $bodyClases = strtolower($activo->alias);
-
     
     if(JoomlaHelper::isCurrentViewCategory($app)){
         $bodyClases .= " category-page ";
@@ -23,6 +23,13 @@
     if(JoomlaHelper::isCurrentViewArticle($app)){
         $bodyClases .= " article-page ";
     }
+
+    if(JoomlaHelper::isCurrentViewHome($app)){
+        $bodyClases .= " home-page ";
+    }
+
+    $isHome = $activo == $menu->getDefault($lang->getTag());
+    
 ?>
 
 
@@ -74,7 +81,7 @@
     </style>
 </head>
 
-<body class="<?php echo $bodyClases; ?> color-fondo">
+<body class="<?php echo $bodyClases; ?>color-fondo">
     <header style="background-color:coral">        
         <div class="<?= $contenedor ?>">
             <div class="mainNav">
