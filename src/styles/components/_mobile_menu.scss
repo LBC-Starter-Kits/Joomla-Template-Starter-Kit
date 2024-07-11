@@ -1,0 +1,35 @@
+.mainNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav{
+    &__menudiv{
+        background-color: black;
+        position: absolute;
+        top: 0;
+        left: -100vw;
+        width: 100vw;
+        height: 100vh;
+        z-index: 10;
+        padding: 1rem;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+
+        &.menu-abierto{
+            left:0;
+        }
+    }
+
+    &__icono{
+        &--cerrar{
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+        }
+    }
+}
