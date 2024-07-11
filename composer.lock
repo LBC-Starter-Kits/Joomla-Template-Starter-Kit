@@ -12,12 +12,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/Luinux81/joomla-helper.git",
-                "reference": "9eaa1ec42bdafec2ba48b77ce5bec51a86073f80"
+                "reference": "62be6eaf36f945b2133d6ce660dc764d8415d417"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Luinux81/joomla-helper/zipball/9eaa1ec42bdafec2ba48b77ce5bec51a86073f80",
-                "reference": "9eaa1ec42bdafec2ba48b77ce5bec51a86073f80",
+                "url": "https://api.github.com/repos/Luinux81/joomla-helper/zipball/62be6eaf36f945b2133d6ce660dc764d8415d417",
+                "reference": "62be6eaf36f945b2133d6ce660dc764d8415d417",
                 "shasum": ""
             },
             "default-branch": true,
@@ -39,7 +39,7 @@
                 "issues": "https://github.com/Luinux81/joomla-helper/issues",
                 "source": "https://github.com/Luinux81/joomla-helper/tree/main"
             },
-            "time": "2024-07-10T00:21:53+00:00"
+            "time": "2024-07-11T20:50:09+00:00"
         }
     ],
     "packages-dev": [],

@@ -97,29 +97,6 @@
 					showon="googleFont:1"
                 />
 
-				<field name="bootstrap" 
-					type="radio" 
-					class="btn-group btn-group-yesno"
-					default="1"
-					label="Usar Bootstrap"
-					description="Usar Bootstrap"
-				>
-					<option value="0">JNO</option>
-					<option value="1">JYES</option>
-				</field>
-
-				<field name="bootstrapVersion"
-					type="list"
-					default="0"
-					label="Selecciona versión"
-					showon="bootstrap:1" 
-				>
-					<option value="0">Ninguno</option>
-					<option value="3">Bootstrap v3</option>
-					<option value="4">Bootstrap v4</option>
-					<option value="5">Bootstrap v5 Alpha</option>
-				</field>
-
 				<field name="fluidContainer"
 					type="radio"
 					class="btn-group btn-group-yesno"
