@@ -52,7 +52,6 @@ module.exports = {
                 { from: path.resolve(__dirname,"vendor"), to: "vendor" },
                 { from: "./src/favicon.ico", to: "favicon.ico" },
                 { from: "./src/index.php", to: "index.php" },
-                { from: "./src/helper.php", to: "helper.php" },
                 { from: "./src/template_preview.png", to: "template_preview.png" },
                 { from: "./src/template_thumbnail.png", to: "template_thumbnail.png" },
                 { from: "./src/templateDetails.xml", to: "templateDetails.xml" },                
