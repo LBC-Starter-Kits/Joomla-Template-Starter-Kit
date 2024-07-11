@@ -89,16 +89,16 @@
                         <div class="nav__menu-footer">
                             <div class="social-wrapper">
                                 <a href="#" target="_blank">
-                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/facebook-1-blanco.png" alt="facebook">
+                                <i class="fa-brands fa-facebook"></i>
                                 </a>
                                 <a href="#" target="_blank">
-                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/twitter-1-blanco.png" alt="twitter">
+                                <i class="fa-brands fa-twitter"></i>
                                 </a>
                                 <a href="#" target="_blank">
-                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/instagram-1-blanco.png" alt="instagram">
+                                    <i class="fa-brands fa-instagram"></i>
                                 </a>
                                 <a href="#" target="_blank">
-                                    <img class="social-logo" src="<?php echo $templatePath;?>/images/social/youtube-1-blanco.png" alt="youtube">
+                                    <i class="fa-brands fa-youtube"></i>
                                 </a>
                             </div>
                             <div class="idioma-wrapper-menu">
