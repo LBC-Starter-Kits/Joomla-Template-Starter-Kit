@@ -1,3 +1,32 @@
 // -----------------------------------------------------------------------------
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
+header{
+    background-color:coral;
+    padding: 1rem 0;
+}
+
+.mainNav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__menu--desktop{
+    @include mq('tablet','max'){
+        display: none;
+    }
+
+    & > .nav{
+        list-style-type: none;
+        display: flex;
+        gap: 2rem;
+
+    }
+}
+
+.nav__menu--movil{
+    @include mq('tablet','min'){
+        display: none;
+    }
+}

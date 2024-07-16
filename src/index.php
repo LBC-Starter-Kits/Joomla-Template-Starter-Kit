@@ -69,7 +69,7 @@
 </head>
 
 <body class="<?php echo $bodyClases; ?>color-fondo">
-    <header style="background-color:coral">        
+    <header>        
         <div class="<?= $contenedor ?>">
             <div class="mainNav">
                 <span class="nav__logo">LOGO</span>
