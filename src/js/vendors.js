@@ -1,0 +1,1 @@
+import 'lbcdev-navigation-menu';

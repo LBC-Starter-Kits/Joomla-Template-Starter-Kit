@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      lbcdev-navigation-menu:
+        specifier: git+https://${ENV.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/Luinux81/web-components#lbcdev-navigation-menu
+        version: git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#dbaf95fd1c4e94a445883ace2b7d4da3744220f8
     devDependencies:
       '@babel/core':
         specifier: ^7.24.7
@@ -1215,6 +1219,14 @@ packages:
   kind-of@6.0.3:
     resolution: {integrity: sha512-dcS1ul+9tmeD95T+x28/ehLgd9mENa3LsvDTtzm3vyBEO7RPptvAD+t44WVXaUjTBRcrpFeFlC8WCruUR456hw==}
     engines: {node: '>=0.10.0'}
+
+  lbcdev-navigation-menu@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#dbaf95fd1c4e94a445883ace2b7d4da3744220f8:
+    resolution: {commit: dbaf95fd1c4e94a445883ace2b7d4da3744220f8, repo: https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git, type: git}
+    version: 1.0.0
+
+  lbcdev-wc-common@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#42ad3b7ba429516011d8934a999da4859a2304a2:
+    resolution: {commit: 42ad3b7ba429516011d8934a999da4859a2304a2, repo: https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git, type: git}
+    version: 1.0.0
 
   loader-runner@4.3.0:
     resolution: {integrity: sha512-3R/1M+yS3j5ou80Me59j7F9IMs4PXs3VqRrm0TU3AbKPxlmpoY1TNscJV/oGJXo8qCatFGTfDbY6W6ipGOYXfg==}
@@ -3049,6 +3061,12 @@ snapshots:
   json5@2.2.3: {}
 
   kind-of@6.0.3: {}
+
+  lbcdev-navigation-menu@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#dbaf95fd1c4e94a445883ace2b7d4da3744220f8:
+    dependencies:
+      lbcdev-wc-common: git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#42ad3b7ba429516011d8934a999da4859a2304a2
+
+  lbcdev-wc-common@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#42ad3b7ba429516011d8934a999da4859a2304a2: {}
 
   loader-runner@4.3.0: {}
 

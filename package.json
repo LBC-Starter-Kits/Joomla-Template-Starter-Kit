@@ -20,6 +20,9 @@
     "url": "https://github.com/LBC-Starter-Kits/Joomla-Template-Starter-Kit/issues"
   },
   "homepage": "https://github.com/LBC-Starter-Kits/Joomla-Template-Starter-Kit#readme",
+  "dependencies": {
+    "lbcdev-navigation-menu": "git+https://${ENV.GITHUB_PERSONAL_ACCESS_TOKEN}@github.com/Luinux81/web-components#lbcdev-navigation-menu"
+  },
   "devDependencies": {
     "@babel/core": "^7.24.7",
     "@babel/polyfill": "^7.10.1",
