@@ -973,8 +973,8 @@ packages:
     resolution: {integrity: sha512-QwGuEUouP2kVwQenAsOof5Fv8K9t3D8Ca8NxcXKrIpEHjTXK5J2nXLdP+ALI1cgv8wj7KuwBhTwBkOZSJKM5XQ==}
     engines: {node: '>=6'}
 
-  electron-to-chromium@1.4.829:
-    resolution: {integrity: sha512-5qp1N2POAfW0u1qGAxXEtz6P7bO1m6gpZr5hdf5ve6lxpLM7MpiM4jIPz7xcrNlClQMafbyUDDWjlIQZ1Mw0Rw==}
+  electron-to-chromium@1.4.830:
+    resolution: {integrity: sha512-TrPKKH20HeN0J1LHzsYLs2qwXrp8TF4nHdu4sq61ozGbzMpWhI7iIOPYPPkxeq1azMT9PZ8enPFcftbs/Npcjg==}
 
   enhanced-resolve@5.17.0:
     resolution: {integrity: sha512-dwDPwZL0dmye8Txp2gzFmA6sxALaSvdRDjPH0viLcKrtlOL3tw62nWWweVD1SdILDTJrbrL6tdWVN58Wo6U3eA==}
@@ -1150,8 +1150,8 @@ packages:
     resolution: {integrity: sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==}
     engines: {node: '>=8'}
 
-  is-core-module@2.14.0:
-    resolution: {integrity: sha512-a5dFJih5ZLYlRtDc0dZWP7RiKr6xIKzmn/oAYCDvdLThadVgyJwlaoQPmRtMSpz+rk0OGAgIu+TcM9HUF0fk1A==}
+  is-core-module@2.15.0:
+    resolution: {integrity: sha512-Dd+Lb2/zvk9SKy1TGCt1wFJFo/MWBPMX5x7KcvLajWTGuomczdQX61PvY5yK6SVACwpoexWo81IfFyoKY2QnTA==}
     engines: {node: '>= 0.4'}
 
   is-extglob@2.1.1:
@@ -1227,8 +1227,8 @@ packages:
     resolution: {commit: 74968847fec5588d33ed91440b294da0920b161d, repo: https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git, type: git}
     version: 1.0.0
 
-  lbcdev-wc-common@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#42ad3b7ba429516011d8934a999da4859a2304a2:
-    resolution: {commit: 42ad3b7ba429516011d8934a999da4859a2304a2, repo: https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git, type: git}
+  lbcdev-wc-common@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#2b99085e1487b9b69eb16ad150c5d1a60a53f732:
+    resolution: {commit: 2b99085e1487b9b69eb16ad150c5d1a60a53f732, repo: https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git, type: git}
     version: 1.0.0
 
   loader-runner@4.3.0:
@@ -2749,7 +2749,7 @@ snapshots:
   browserslist@4.23.2:
     dependencies:
       caniuse-lite: 1.0.30001642
-      electron-to-chromium: 1.4.829
+      electron-to-chromium: 1.4.830
       node-releases: 2.0.17
       update-browserslist-db: 1.1.0(browserslist@4.23.2)
 
@@ -2859,7 +2859,7 @@ snapshots:
       pify: 4.0.1
       rimraf: 2.7.1
 
-  electron-to-chromium@1.4.829: {}
+  electron-to-chromium@1.4.830: {}
 
   enhanced-resolve@5.17.0:
     dependencies:
@@ -3015,7 +3015,7 @@ snapshots:
     dependencies:
       binary-extensions: 2.3.0
 
-  is-core-module@2.14.0:
+  is-core-module@2.15.0:
     dependencies:
       hasown: 2.0.2
 
@@ -3069,9 +3069,9 @@ snapshots:
 
   lbcdev-navigation-menu@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#74968847fec5588d33ed91440b294da0920b161d:
     dependencies:
-      lbcdev-wc-common: git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#42ad3b7ba429516011d8934a999da4859a2304a2
+      lbcdev-wc-common: git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#2b99085e1487b9b69eb16ad150c5d1a60a53f732
 
-  lbcdev-wc-common@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#42ad3b7ba429516011d8934a999da4859a2304a2: {}
+  lbcdev-wc-common@git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#2b99085e1487b9b69eb16ad150c5d1a60a53f732: {}
 
   loader-runner@4.3.0: {}
 
@@ -3273,7 +3273,7 @@ snapshots:
 
   resolve@1.22.8:
     dependencies:
-      is-core-module: 2.14.0
+      is-core-module: 2.15.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
 

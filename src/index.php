@@ -56,6 +56,7 @@
         }
     ?>
 
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="<?php echo $templatePath ?>/css/main.css" type="text/css" />
@@ -66,6 +67,45 @@
             --color-fondo: <?php echo $this->params['templateBackgroundColor'] ?>;
         }
     </style>
+
+    <script>
+        function getMenuData(){            
+            return [
+                {
+                    content: 'Home',
+                    link: '#',
+                    children: [
+                            {
+                                content: 'Home 1',
+                                link: '#',
+                            },
+                            {
+                                content: 'Home 2',
+                                link: '#',
+                                children: [
+                                    {
+                                        content: 'Home 21',
+                                        link: '#',
+                                    },
+                                    {
+                                        content: 'Home 22',
+                                        link: '#',
+                                    },
+                                ],
+                            },
+                        ],
+                },
+                {
+                    content: 'Link 1',
+                    link: '#',
+                },
+                {
+                    content: 'Link 2',
+                    link: '#',
+                }
+            ];        
+        }
+    </script>
 </head>
 
 <body class="<?php echo $bodyClases; ?>color-fondo">
@@ -73,9 +113,13 @@
         <div class="<?= $contenedor ?>">
             <div class="mainNav">
                 <span class="nav__logo">LOGO</span>
+
+                <!-- Menú desktop -->
                 <div class="nav__menu nav__menu--desktop">
                     <jdoc:include type="modules" name="nav-desktop" />
                 </div>
+
+                <!-- Menu móvil -->
                 <div class="nav__menu nav__menu--movil">
                     <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
                     <jdoc:include type="modules" name="nav-movil" />
@@ -111,6 +155,72 @@
         </div>
     </header>
 
+    <header style="background-color:blueviolet;">
+    <div class="<?= $contenedor ?>">
+            <div class="mainNav">
+                <span class="nav__logo">LOGO</span>
+
+                <!-- Menú desktop -->
+                <div class="nav__menu nav__menu--desktop">
+                    <style>
+                        .menu-wc{
+                            font-size: 1.2rem;
+                        }
+
+                        .menu-wc .navmenu-sublist{
+                            background-color: blue;
+                        }
+                        
+                        .menu-wc .navmenu-item a{
+                            color: black;
+                        }
+                    </style>
+                    <lbcdev-navigation-menu
+                        data-menutype="horizontal-nested-dropdown"
+                        data-direction="left"
+                        data-open-on="click"
+                        data-json="getMenuData"
+                        style="background-color: darkcyan;"
+                        class="menu-wc"
+                    >
+                    </lbcdev-navigation-menu>
+                </div>
+
+                <!-- Menu móvil -->
+                <div class="nav__menu nav__menu--movil">
+                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
+                    <jdoc:include type="modules" name="nav-movil" />
+            
+                    <div class="nav__menudiv" data-rol="menu_div">
+                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
+                        <span class="nav__logo">LOGO</span>
+                        <div class="nav__menu-content">
+                            <jdoc:include type="modules" name="nav-movil-content" />
+                        </div>
+                        <div class="nav__menu-footer">
+                            <div class="social-wrapper">
+                                <a href="#" target="_blank">
+                                <i class="fa-brands fa-facebook"></i>
+                                </a>
+                                <a href="#" target="_blank">
+                                <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="#" target="_blank">
+                                    <i class="fa-brands fa-instagram"></i>
+                                </a>
+                                <a href="#" target="_blank">
+                                    <i class="fa-brands fa-youtube"></i>
+                                </a>
+                            </div>
+                            <div class="idioma-wrapper-menu">
+                                <jdoc:include type="modules" name="nav-movil-footer" <?= "style=\"none\"" ?> />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
     <main>
         <div class="<?= $contenedor ?> position-top">
             <jdoc:include type="modules" name="position-top" />
