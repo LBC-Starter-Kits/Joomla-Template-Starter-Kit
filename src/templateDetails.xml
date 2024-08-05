@@ -110,6 +110,109 @@
 				</field>
 
             </fieldset>
+
+			<fieldset name="Home" label="Home Page">
+				<fieldset
+					name="video"
+					label="Video Header"
+				>
+					<field 
+						name="showHeaderVideo" 
+						label="Mostar video de cabecera"
+						description="Se muestra el video seleccionado en la cabecera de la home page"
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="0" 
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field
+						name="isVideoURLExternal"
+						label="Video externo (Youtube)"
+						description="Sí para videos alojados en Youtube, No para videos de la galería de medios"
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="0" 
+						showon="showHeaderVideo:1"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field
+						name="externalVideoURL"
+						label="URL externa del vídeo"
+						type="text"
+						showon="showHeaderVideo:1[AND]isVideoURLExternal:1"
+					>
+					</field>
+
+					<!-- 
+					El tipo de campo media es incompatibles con el File Browser de JCE. 
+					Si JCE está instalado ir al componente JCE -> Perfil Usuario -> Features & Layout -> Additional Features -> Uncheck File Browser 
+					-->
+					<field 
+						name="internalVideoURL" 
+						type="media"                     
+						label="Video" 
+						types="videos"
+						description="Ruta al video para mostrar"
+						showon="showHeaderVideo:1[AND]isVideoURLExternal:0"
+					/>
+				</fieldset>
+
+				<fieldset name="player" label="Parámetros del reproductor">
+					<field
+						name="video_loop"						
+						label="Video Loop"	
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="1"
+						showon="showHeaderVideo:1"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field
+						name="video_controls"						
+						label="Mostrar controles de video"	
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="0"
+						showon="showHeaderVideo:1"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field
+						name="custom_mute_control"
+						label="Mostrar control mute"
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="0"
+						showon="showHeaderVideo:1"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+
+					<field
+						name="video_autoplay"						
+						label="Video Autoplay"	
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="1"
+						showon="showHeaderVideo:1"
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+				</fieldset>
+			</fieldset>
         </fields>
     </config>
 </extension>

@@ -23,7 +23,31 @@ function cierraMenu(){
     btnCerrar.style.display = "none";
 }
 
+function unmuteVideo(){
+    document.getElementById("boton-unmute").style.display="none";
+    document.getElementById("boton-mute").style.display="block";
+
+    var video=document.getElementById("header_video");
+    
+    if(video!=null){
+        video.muted=false;
+    }    
+}
+
+function muteVideo(){
+    document.getElementById("boton-unmute").style.display="block";
+    document.getElementById("boton-mute").style.display="none";
+
+    var video=document.getElementById("header_video");
+    
+    if(video!=null){
+        video.muted=true;
+    }
+}
+
 module.exports = {
     abreMenu: abreMenu,
     cierraMenu: cierraMenu,
+    unmuteVideo,
+    muteVideo
 };

@@ -2,8 +2,13 @@
 // This file contains all styles related to the header of the site/application.
 // -----------------------------------------------------------------------------
 header{
-    background-color:coral;
+    background-color:rgba(0,0,0,0.2);
     padding: 1rem 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    width: 100%;
 }
 
 .mainNav{
