@@ -112,10 +112,7 @@
             </fieldset>
 
 			<fieldset name="Home" label="Home Page">
-				<fieldset
-					name="video"
-					label="Video Header"
-				>
+				<fieldset name="video" label="Video Header">
 					<field 
 						name="showHeaderVideo" 
 						label="Mostar video de cabecera"
@@ -161,9 +158,7 @@
 						description="Ruta al video para mostrar"
 						showon="showHeaderVideo:1[AND]isVideoURLExternal:0"
 					/>
-				</fieldset>
 
-				<fieldset name="player" label="Parámetros del reproductor">
 					<field
 						name="video_loop"						
 						label="Video Loop"	
@@ -211,6 +206,26 @@
 						<option value="1">JYES</option>
 						<option value="0">JNO</option>
 					</field>
+				</fieldset>
+				<fieldset name="featured" label="Sección Featured">
+					<field 
+						name="showMenuFeatured" 
+						label="Mostar menú Featured"
+						description="Se muestra el menú seleccionado"
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="0" 
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field
+						name="menutype"
+						type="menu"
+						label="Seleccionar menú"
+						clientid="0"
+						showon="showMenuFeatured:1"
+					/>
 				</fieldset>
 			</fieldset>
         </fields>

@@ -47,6 +47,7 @@ module.exports = {
         }),
         new CopyPlugin({
             patterns: [
+                { from: path.resolve(__dirname,"src","parts"), to: "parts" },
                 { from: path.resolve(__dirname,"src","images"), to: "images" },
                 { from: path.resolve(__dirname,"src","html"), to: "html" },
                 { from: path.resolve(__dirname,"vendor"), to: "vendor" },
