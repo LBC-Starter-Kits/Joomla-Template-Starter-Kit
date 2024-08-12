@@ -109,111 +109,23 @@
 </head>
 
 <body class="<?php echo $bodyClases; ?>color-fondo">
-    <header>        
-        <div class="<?= $contenedor ?>">
-            <div class="mainNav">
-                <span class="nav__logo">LOGO</span>
 
-                <!-- Menú desktop -->
-                <div class="nav__menu nav__menu--desktop">
-                    <jdoc:include type="modules" name="nav-desktop" />
-                </div>
+<?php include_once "parts/layout/header.php"; ?>
 
-                <!-- Menu móvil -->
-                <div class="nav__menu nav__menu--movil">
-                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
-                    <jdoc:include type="modules" name="nav-movil" />
-            
-                    <div class="nav__menudiv" data-rol="menu_div">
-                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
-                        <span class="nav__logo">LOGO</span>
-                        <div class="nav__menu-content">
-                            <jdoc:include type="modules" name="nav-movil-content" />
-                        </div>
-                        <div class="nav__menu-footer">
-                            <div class="social-wrapper">
-                                <a href="#" target="_blank">
-                                <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                <i class="fa-brands fa-twitter"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa-brands fa-youtube"></i>
-                                </a>
-                            </div>
-                            <div class="idioma-wrapper-menu">
-                                <jdoc:include type="modules" name="nav-movil-footer" <?= "style=\"none\"" ?> />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
+<?php 
+// if (JoomlaHelper::isCurrentViewHome($app)){
+//     include_once 'parts/layout/home.php';
+// }
+// elseif (JoomlaHelper::isCurrentViewCategory($app)) {
+//     include_once 'parts/layout/category.php';
+// }
+// elseif (JoomlaHelper::isCurrentViewArticle($app)) {
+//     include_once 'parts/layout/article.php';
+// }
+// else{
 
-    <header style="background-color:blueviolet; display:none;">
-    <div class="<?= $contenedor ?>">
-            <div class="mainNav">
-                <span class="nav__logo">LOGO</span>
-
-                <!-- Menú desktop -->
-                <div class="nav__menu nav__menu--desktop">
-                    <style>
-                        .menu-wc{
-                            font-size: 1.2rem;
-                        }
-
-                        .menu-wc .navmenu-sublist{
-                            background-color: blue;
-                        }
-                        
-                        .menu-wc .navmenu-item a{
-                            color: black;
-                        }
-                    </style>
-
-                </div>
-
-                <!-- Menu móvil -->
-                <div class="nav__menu nav__menu--movil">
-                    <i class="nav__icono nav__icono--abrir fas fa-bars" onclick="abreMenu();" data-rol="boton-abrir"></i>
-                    <jdoc:include type="modules" name="nav-movil" />
-            
-                    <div class="nav__menudiv" data-rol="menu_div">
-                        <i class="nav__icono nav__icono--cerrar fas fa-times-circle" onclick="cierraMenu();" data-rol="boton-cerrar"></i>
-                        <span class="nav__logo">LOGO</span>
-                        <div class="nav__menu-content">
-                            <jdoc:include type="modules" name="nav-movil-content" />
-                        </div>
-                        <div class="nav__menu-footer">
-                            <div class="social-wrapper">
-                                <a href="#" target="_blank">
-                                <i class="fa-brands fa-facebook"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                <i class="fa-brands fa-twitter"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa-brands fa-instagram"></i>
-                                </a>
-                                <a href="#" target="_blank">
-                                    <i class="fa-brands fa-youtube"></i>
-                                </a>
-                            </div>
-                            <div class="idioma-wrapper-menu">
-                                <jdoc:include type="modules" name="nav-movil-footer" <?= "style=\"none\"" ?> />
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </header>
-
+// }
+?>
     <?php
     // Sección Video Header
     if (JoomlaHelper::isCurrentViewHome($app) && $this->params["showHeaderVideo"]){      
@@ -222,6 +134,12 @@
     ?>
 
     <main>
+        <?php 
+        if($this->params["showMenuFeatured"]){
+            include 'parts/home/featured.php';
+        } 
+        ?>
+
         <div class="<?= $contenedor ?> position-top">
             <jdoc:include type="modules" name="position-top" />
         </div>
@@ -235,11 +153,7 @@
         </div>
     </main>
 
-    <footer>
-        <div class="<?= $contenedor ?> footer">
-            <jdoc:include type="modules" name="footer" />
-        </div>
-    </footer>
+<?php include_once 'parts/layout/footer.php'; ?>
 
     <script type="text/javascript" src="<?php echo $templatePath . '/js/vendors.js' ?>"></script>
     <script type="text/javascript" src="<?php echo $templatePath . '/js/main.js' ?>"></script>    
