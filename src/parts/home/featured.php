@@ -2,6 +2,8 @@
 
 use Joomla\CMS\Factory;
 use \Joomla\CMS\Application\CMSApplication;
+use Joomla\CMS\Categories\Categories;
+use LBCdev\JoomlaHelper;
 
 /** @var CMSApplication */
 $app = Factory::getApplication();
@@ -14,46 +16,55 @@ $items = $menu->getItems('menutype', 'mainmenu');
 <section class="<?php echo $contenedor; ?>">
   <h2>ESTA ES LA SECCION FEATURED</h2>
 
-  <div class="featured_section">  
+  <?php
+  switch ($this->params['sectiontype']) {
+    case 'cards-1':
+    default:
+      $extra_class = "cards--1";
+      break;
+  }
+  ?>
+  <div class="featured_section <?php echo $extra_class; ?>">  
   
   <?php foreach ($items as $item) { ?>
   <div class="featured_item">
-      <?php echo $item->title; ?>
+      <?php
+      $titulo = $item->title;
+      $imagen = "";
+      $articulo = "";
+
+      if(array_key_exists('option',$item->query)){
+        if($item->query['option'] == "com_content" && $item->query['view'] == "category"){
+          if(JoomlaHelper::getJoomlaVersion()<= 5){
+            $categories = Categories::getInstance("content");
+          }
+          else{
+            $categories = Factory::getApplication()->bootComponent('com_content')->getCategory([],"");
+          }
+          
+          $categoryNodes = $categories->get($item->query['id']);
+          $imagen = $categoryNodes->getParams()->get('image');          
+        }
+        elseif ($item->query['option'] == "com_content" && $item->query['view'] == "article") {
+          $articulo = Factory::getApplication()
+            ->bootComponent('com_content')
+            ->getMVCFactory()
+            ->createModel('article')
+            ->getItem($item->query['id']);    
+          
+          $imagen = json_decode($articulo->images)->image_intro;
+        }
+      }
+
+      ?>
+      
+      <span><?php echo $titulo; ?></span>      
+      <?php if($imagen){
+        echo "<img src='". $imagen . "' alt='' class='featured_item_image'>";
+      }
+      ?>
   </div>
-  <?php } ?>
+  <?php } // End Foreach ?> 
   
   </div>
 </section>
-
-<!--
- Joomla\CMS\Menu\MenuItem {#702 ▼
-  +id: 101
-  +menutype: "mainmenu"
-  +title: "Home"
-  +alias: "home"
-  +note: ""
-  +route: "home"
-  +link: "index.php?option=com_content&view=featured"
-  +type: "component"
-  +level: 1
-  +language: "*"
-  +browserNav: 0
-  +access: 1
-  #params: 
-Joomla\Registry
-\
-Registry {#706 ▶}
-  +home: 1
-  +img: ""
-  +template_style_id: 0
-  +component_id: 19
-  +parent_id: 1
-  +component: "com_content"
-  +tree: array:1 [▶]
-  +query: array:2 [▶]
-  #_parent: null
-  #_children: []
-  #_leftSibling: null
-  #_rightSibling: null
-}
--->

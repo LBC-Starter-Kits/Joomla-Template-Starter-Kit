@@ -207,6 +207,8 @@
 						<option value="0">JNO</option>
 					</field>
 				</fieldset>
+
+
 				<fieldset name="featured" label="Sección Featured">
 					<field 
 						name="showMenuFeatured" 
@@ -226,6 +228,12 @@
 						clientid="0"
 						showon="showMenuFeatured:1"
 					/>
+					<field name="sectiontype"
+						type="list"
+						label="Tipo de sección"
+						>
+						<option value="cards-1">Cards 1</option>
+					</field>
 				</fieldset>
 			</fieldset>
         </fields>

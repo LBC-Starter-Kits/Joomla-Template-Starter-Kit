@@ -1,8 +1,15 @@
-.featured_section{
+.featured_section.cards--1{
     display: grid;
     grid-template-columns: repeat(3, minmax(200px, 1fr));
 
     .featured_item{
+        position: relative;
         background-color: lightgrey;
+        display: grid;
+        place-items: center;      
+        
+        span{
+            position: absolute;
+        }
     }
 }
