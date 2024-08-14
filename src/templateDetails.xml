@@ -235,6 +235,47 @@
 						<option value="cards-1">Cards 1</option>
 					</field>
 				</fieldset>
+
+				<fieldset name="slider" label="Sección Slider">
+					<field 
+						name="showSlider" 
+						label="Mostar Slider"
+						description=""
+						type="radio" 
+						class="btn-group btn-group-yesno"
+						default="1" 
+					>
+						<option value="1">JYES</option>
+						<option value="0">JNO</option>
+					</field>
+					<field
+						name="slides"
+						type="subform"
+						label="Slides"
+						description=""
+						multiple="true"
+						min="1"
+						showon="showSlider:1"
+					>
+						<form>
+							<field
+								name="slide_image"
+								type="media"
+								label="Imagen"
+								description="Imagen de fondo del slide"
+								preview="tooltip"
+							/>
+							<field
+								name="slide_content"
+								type="editor"
+								label="Contenido Slide"
+								cols="40"
+								rows="10"
+								filter="safehtml"
+							/>
+						</form>
+					</field>
+				</fieldset>
 			</fieldset>
         </fields>
     </config>

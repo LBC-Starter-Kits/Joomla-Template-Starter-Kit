@@ -1,0 +1,163 @@
+.slider__container{
+    position: relative;
+    display: block;
+    max-width: 1000px;
+    max-height: 100vh;
+    height: 75vh;
+    margin: 0 auto;    
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.6);
+}
+
+/* Position the "next button" to the right */
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+  /* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.9);
+}
+
+
+
+.slider__dots{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin: 1rem auto;
+
+    .slider__dot{
+        cursor: pointer;
+        height: 15px;
+        width: 15px;
+        margin: 0 2px;
+        background-color: #bbb;
+        border-radius: 50%;
+        display: inline-block;
+        transition: background-color 0.6s ease;
+
+        &.active, &:hover{
+            background-color: #e99516;
+        }
+    }
+}
+
+/* Fading animation */
+.fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+
+@keyframes fade {
+    from {opacity: .4}
+    to {opacity: 1}
+}
+
+
+.slider__item{
+    position: relative;
+    display: none;
+    height: 100%;
+
+    &.active{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    img{
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .slider__content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        width: 75%;
+    
+        padding: 1.5rem;
+    
+        border: 1px solid rgba(255,255,255,0.1);
+        border-radius: 15px;
+        box-shadow: 1px 1px 2px rgba(255,255,255,0.1);
+    
+        background-color: rgba(0,0,0,0.3);
+        backdrop-filter: blur(5px);
+        
+    
+        &__title, &__main{
+            position: relative;
+            z-index: 2;
+            width: 100%;
+            margin: 0 auto;
+            text-align: left;
+            color: white;
+            padding: .5rem 0;
+        }
+    
+        &__title{
+            font-weight: bold;
+        }
+    }
+}
+
+.slider__item--video{
+    .slider__imagen{
+        visibility: hidden;
+    }
+
+    .slider__content{
+        width: 100%;
+        height: 100%;
+        padding: 0;
+        box-shadow: none;
+        border: none;
+        border-radius: 0px;
+
+        @include mq("tablet-small", "max"){
+            height: unset;
+        }
+    }
+
+    .slider__content__title{
+        position: absolute;
+        top: 1rem;
+        left: 1rem;
+        z-index: 3;
+    }
+
+    .slider__content__main{
+        height: 100%;
+        width: 100%;
+        padding: 0;
+
+        video{
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+}

@@ -138,6 +138,9 @@
         if($this->params["showMenuFeatured"]){
             include 'parts/home/featured.php';
         } 
+
+        if($this->params["showSlider"])
+            include 'parts/home/slider.php';
         ?>
 
         <div class="<?= $contenedor ?> position-top">
@@ -158,5 +161,19 @@
     <script type="text/javascript" src="<?php echo $templatePath . '/js/vendors.js' ?>"></script>
     <script type="text/javascript" src="<?php echo $templatePath . '/js/main.js' ?>"></script>    
 
+    <?php    
+    if (JoomlaHelper::isCurrentViewHome($app) && $this->params["showSlider"]){      
+    ?>
+    <script>
+        window.onload = function() {
+            showSlides(1);
+        };
+        setInterval(function() {
+            plusSlides(1);
+        }, 5000); 
+    </script>
+    <?php 
+    }
+    ?>
 </body>
 </html>
