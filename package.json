@@ -4,9 +4,12 @@
   "description": "Una plantilla de base con la estructura de una template Joomla.",
   "main": "index.js",
   "scripts": {
-    "bump-dependencies": "npx npm-check-updates -u",
-    "build": "webpack --config webpack.config.js",
-    "watch": "webpack --config webpack.config.js --watch",
+    "bump-dependencies": "npx npm-check-updates -u",    
+    "build": "webpack --mode production",
+    "build-prepare": "composer install --no-dev",
+    "dev": "webpack --mode development",
+    "dev-prepare": "composer install",
+    "watch": "webpack --mode development --watch",
     "update-styles": "git subtree pull --prefix src/styles https://github.com/LBC-Starter-Kits/sass-7-1-pattern.git main --squash"
   },
   "repository": {
@@ -24,20 +27,19 @@
     "lbcdev-navigation-menu": "git+https://$%7BENV.GITHUB_PERSONAL_ACCESS_TOKEN%7D@github.com/Luinux81/web-components.git#lbcdev-navigation-menu"
   },
   "devDependencies": {
-    "@babel/core": "^7.24.9",
+    "@babel/core": "^7.25.2",
     "@babel/polyfill": "^7.12.1",
-    "@babel/preset-env": "^7.24.8",
-    "babel-loader": "^9.1.3",
+    "@babel/preset-env": "^7.25.4",
+    "babel-loader": "^9.2.1",
     "clean-webpack-plugin": "^4.0.0",
     "copy-webpack-plugin": "^12.0.2",
     "css-loader": "^7.1.2",
-    "mini-css-extract-plugin": "^2.9.0",
-    "sass": "^1.77.8",
-    "sass-loader": "^14.2.1",
+    "mini-css-extract-plugin": "^2.9.1",
+    "sass": "^1.79.3",
+    "sass-loader": "^16.0.2",
     "style-loader": "^4.0.0",
-    "webpack": "^5.93.0",
+    "webpack": "^5.95.0",
     "webpack-cli": "^5.1.4",
     "zip-webpack-plugin": "^4.0.1"
-  },
-  "packageManager": "pnpm@9.5.0+sha512.140036830124618d624a2187b50d04289d5a087f326c9edfc0ccd733d76c4f52c3a313d4fc148794a2a9d81553016004e6742e8cf850670268a7387fc220c903"
+  }
 }
