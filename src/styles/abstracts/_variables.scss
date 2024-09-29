@@ -20,22 +20,20 @@ $code-font-stack: 'Courier New', 'DejaVu Sans Mono', 'Bitstream Vera Sans Mono',
 
 /// Main brand color
 /// @type Color
-$brand-color: rgb(34, 62, 187) !default;
-
-/// Colores
-
-/// @type Color
-$primary-color:  rgb(0, 0, 0) !default;
-///@type Color 
-$secondary-color:  rgb(0, 0, 0) !default;
-///@type Color 
-$terciary-color:  rgb(0, 0, 0) !default;
-///@type Color 
-$accent-color: $brand-color;
+$color-brand: rgb(34, 62, 187) !default;
 
 
 /// @type Color
-$text-color: rgb(255, 255, 255) !default;
+$color-primary:  rgb(0, 0, 0) !default;
+///@type Color 
+$color-secondary:  rgb(0, 0, 0) !default;
+///@type Color 
+$color-terciary:  rgb(0, 0, 0) !default;
+///@type Color 
+$color-accent: $color-brand;
+
+/// @type Color
+$color-text: rgb(255, 255, 255) !default;
 
 
 /// @type Color
@@ -101,3 +99,15 @@ $typo-scales : (
 /// @example scss - When using a CDN
 ///   $base-url: 'http://cdn.example.com/assets/';
 $base-url: '/assets/' !default;
+
+
+
+:root{
+  --color-primary: #{$color-primary};
+  --color-secondary: #{$color-secondary};
+  --color-terciary: #{$color-terciary};
+  --color-accent: #{$color-accent};
+  --color-brand: #{$color-brand};
+
+  --color-text: #{$color-text};
+}

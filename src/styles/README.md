@@ -403,6 +403,202 @@ Este mixin crea un enlace estilizado con un fondo degradado que cambia de posici
 
 ### <a name="clases-reutilizables"></a>Clases Reutilizables
 
+#### Layouts
+
+###### `.container--classic`
+
+Este layout aplica un contenedor centrado con un ancho máximo que se adapta a la pantalla, hasta un límite definido por la variable `$max-width`.
+
+```scss
+<div class="container--classic">
+  <!-- contenido -->
+</div>
+```
+
+###### `.container--static`
+
+Un contenedor estático con un ancho máximo y padding lateral para mantener el contenido alineado en el centro.
+
+```scss
+<div class="container--static">
+  <!-- contenido -->
+</div>
+```
+
+---
+
+###### `.container--fluid`
+
+Un layout fluido que utiliza un sistema de grillas para controlar el contenido, con áreas que pueden romper los límites del contenedor principal.
+
+```scss
+<div class="container--fluid">
+  <!-- contenido -->
+</div>
+```
+
+---
+
+###### `.cluster`
+
+Este layout utiliza flexbox para agrupar elementos en fila o columna con un gap entre ellos. Ideal para listas de elementos.
+
+```scss
+<div class="cluster">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+---
+
+###### `.flexible-grid`
+
+Un layout flexible basado en flexbox que distribuye los elementos dentro de una cuadrícula adaptable. Los elementos ocupan el mismo espacio.
+
+```scss
+<div class="flexible-grid">
+  <div>Item 1</div>
+  <div>Item 2</div>
+</div>
+```
+
+---
+
+###### `.auto-grid`
+
+Este layout utiliza CSS Grid para crear una cuadrícula automática, donde las columnas se ajustan automáticamente al tamaño mínimo definido.
+
+```scss
+<div class="auto-grid">
+  <div>Item 1</div>
+  <div>Item 2</div>
+  <div>Item 3</div>
+</div>
+```
+
+---
+
+###### `.reel`
+
+Este layout crea una cinta de desplazamiento horizontal con elementos ajustados en una cuadrícula. Ideal para carruseles o galerías de imágenes.
+
+```scss
+<div class="reel">
+  <div>Slide 1</div>
+  <div>Slide 2</div>
+</div>
+```
+
+---
+
+###### `.main-with-sidebar`
+
+Un layout con un área principal y una barra lateral. El área principal tiene prioridad y crece más que la barra lateral.
+
+```scss
+<div class="main-with-sidebar">
+  <div>Main Content</div>
+  <div>Sidebar</div>
+</div>
+```
+
+---
+
+###### `.pancake-stack`
+
+Este layout organiza el contenido en una pila donde la cabecera, el contenido y el pie de página se apilan verticalmente.
+
+```scss
+<div class="pancake-stack">
+  <header>Header</header>
+  <main>Main Content</main>
+  <footer>Footer</footer>
+</div>
+```
+
+---
+
+###### `.holy-grail`
+
+Este layout clásico de "Holy Grail" distribuye el contenido en un esquema de tres columnas con cabecera y pie de página.
+
+```scss
+<div class="holy-grail">
+  <div class="header">Header</div>
+  <div class="left-side">Left Sidebar</div>
+  <div class="main">Main Content</div>
+  <div class="right-side">Right Sidebar</div>
+  <div class="footer">Footer</div>
+</div>
+```
+
+---
+
+###### `.grid-12-span`
+
+Un layout basado en una cuadrícula de 12 columnas. Los elementos se pueden ajustar en diferentes números de columnas usando clases como `.span-12`, `.span-6`, etc.
+
+```scss
+<div class="grid-12-span">
+  <div class="span-12">Full Width</div>
+  <div class="span-6">Half Width</div>
+</div>
+```
+
+---
+
+###### `.grid-12-chess`
+
+Un layout basado en una cuadrícula de 12x12 que permite disponer los elementos en posiciones específicas, como un tablero de ajedrez.
+
+```scss
+<div class="grid-12-chess">
+  <div class="item-1">Item 1</div>
+  <div class="item-2">Item 2</div>
+</div>
+```
+
+---
+
+###### `.full-layout-area`
+
+Un layout que organiza las áreas de la página como la cabecera, navegación, contenido principal, anuncios, barra lateral y pie de página, adaptable a diferentes tamaños de pantalla.
+
+-  **Versión móvil**:
+
+```scss
+<div class="full-layout-area full-layout-area--mobile">
+  <header class="header">Header</header>
+  <nav class="navigation">Nav</nav>
+  <main class="main">Main Content</main>
+  <footer class="footer">Footer</footer>
+</div>
+```
+
+-  **Versión tablet**:
+
+```scss
+<div class="full-layout-area full-layout-area--tablet">
+  <header class="header">Header</header>
+  <nav class="navigation">Nav</nav>
+  <main class="main">Main Content</main>
+  <footer class="footer">Footer</footer>
+</div>
+```
+
+-  **Versión desktop**:
+
+```scss
+<div class="full-layout-area full-layout-area--desktop">
+  <header class="header">Header</header>
+  <nav class="navigation">Nav</nav>
+  <main class="main">Main Content</main>
+  <footer class="footer">Footer</footer>
+</div>
+```
+
 ## <a name="convenciones-de-estilo"></a>Convenciones de Estilo
 
 ## <a name="contribución"></a>Contribución
