@@ -2,12 +2,12 @@
  * Basic typography style for copy text
  */
 body {
-  color: $text-color;
+  color: var(--color-text);
   font: normal 125% / 1.4 $text-font-stack;
 }
 
 
 h1{
-  color: $brand-color;
+  color: var(--color-accent);
   text-transform: uppercase;
 }
